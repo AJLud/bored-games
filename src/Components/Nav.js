@@ -13,6 +13,7 @@ const Nav = () => {
 
   return (
     <div className="Navbar">
+      <button className="navbar-contents">All</button>
       {categories.map((category) => {
         return (
           <Link key={category.slug}>
