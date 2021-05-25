@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import CommentForm from "./CommentForm";
 import Comments from "./Comments";
 import { getSingleReview, voteReview } from "./Utils/api";
 
@@ -7,6 +8,7 @@ const Review = () => {
   const params = useParams();
   const [review, setReview] = useState({});
   const [reviewVotes, setReviewVotes] = useState(0);
+
   useEffect(() => {
     getSingleReview(params.review_id).then((reviewFromApi) => {
       setReview(reviewFromApi);
@@ -41,6 +43,7 @@ const Review = () => {
       </span>
       <p className="comment-bar">Comments</p>
       <Comments />
+      <CommentForm />
     </div>
   );
 };
