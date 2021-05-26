@@ -12,15 +12,17 @@ const Nav = () => {
   }, []);
 
   return (
-    <div className="Navbar">
-      <button className="navbar-contents">All</button>
-      {categories.map((category) => {
-        return (
-          <Link key={category.slug}>
-            <button className="navbar-contents">{category.slug}</button>
-          </Link>
-        );
-      })}
+    <div>
+      <div className="Navbar">
+        <button className="navbar-contents">All</button>
+        {categories.map((category) => {
+          return (
+            <Link key={category.slug}>
+              <button className="navbar-contents">{category.slug}</button>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

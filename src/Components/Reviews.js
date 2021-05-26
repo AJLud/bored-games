@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
-  const params = useParams();
+  // const params = useParams();
 
   useEffect(() => {
     getReviews().then((reviewsFromApi) => {

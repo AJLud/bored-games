@@ -1,9 +1,48 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { postComment } from "./Utils/api";
+import { useParams } from "react-router-dom";
+import { UserContext } from "../Contexts/UserContext";
 
-const CommentForm = () => {
+const CommentForm = ({ setComments }) => {
+  const [commentInput, setCommentInput] = useState("");
+  const params = useParams();
+  const { user } = useContext(UserContext);
+
+  const setAndUpdateComments = () => {
+    postComment(params.review_id, user, commentInput).then((response) => {
+      setComments((currComments) => {
+        const commentsToUpdate = [...currComments];
+        console.log(response);
+        commentsToUpdate.push(response);
+        console.log(commentsToUpdate);
+        return commentsToUpdate;
+      });
+    });
+  };
+
+  //TODO
+  //clear form after submit
+
   return (
     <div>
-      <h2>HELLO I AM A COMMENT FORM</h2>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          setAndUpdateComments();
+        }}
+      >
+        <label>
+          Post Your Comment Here! :
+          <input
+            onChange={(e) => {
+              setCommentInput(e.target.value);
+            }}
+            type="text"
+            placeholder="Add Comment....."
+          ></input>
+        </label>
+        <button>It's Comment Time</button>
+      </form>
     </div>
   );
 };

@@ -8,6 +8,7 @@ const Review = () => {
   const params = useParams();
   const [review, setReview] = useState({});
   const [reviewVotes, setReviewVotes] = useState(0);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     getSingleReview(params.review_id).then((reviewFromApi) => {
@@ -42,8 +43,8 @@ const Review = () => {
         </button>
       </span>
       <p className="comment-bar">Comments</p>
-      <Comments />
-      <CommentForm />
+      <Comments comments={comments} setComments={setComments} />
+      <CommentForm setComments={setComments} />
     </div>
   );
 };

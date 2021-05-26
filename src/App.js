@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
@@ -13,7 +12,7 @@ function App() {
     username: "tickle122",
     name: "Tom Tickle",
     avatar_url:
-      "https://www.spiritsurfers.net/monastery/wp-content/uploads/_41500270_mrtickle.jpg",
+      "https://i1.sndcdn.com/artworks-000213949780-6tc7ox-t500x500.jpg",
   });
 
   return (

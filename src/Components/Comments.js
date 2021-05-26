@@ -3,8 +3,8 @@ import { useParams } from "react-router";
 import { getCommentsForReview } from "./Utils/api";
 import { formatDate } from "./Utils/data-manipulation";
 
-const Comments = () => {
-  const [comments, setComments] = useState([]);
+const Comments = ({ comments, setComments }) => {
+  // const [comments, setComments] = useState([]);
   const params = useParams();
 
   useEffect(() => {
@@ -12,6 +12,7 @@ const Comments = () => {
       setComments(commentsFromApi);
     });
   }, [params.review_id]);
+
   return (
     <div>
       <ul className="comment-gallery">
@@ -22,7 +23,6 @@ const Comments = () => {
               <p>{formatDate(comment.created_at)}</p>
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>
-              <button>⬆️</button>
             </li>
           );
         })}

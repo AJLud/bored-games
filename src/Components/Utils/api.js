@@ -36,3 +36,11 @@ export const voteReview = async (review_id) => {
     inc_votes: 1,
   });
 };
+
+export const postComment = async (review_id, user, commentInput) => {
+  const { data } = await gamesApi.post(`/reviews/${review_id}/comments`, {
+    username: user.username,
+    body: commentInput,
+  });
+  return data.comment;
+};
