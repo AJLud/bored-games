@@ -1,26 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap");
+
 .App {
   text-align: center;
   background-color: rgb(255, 255, 255);
 }
 
-.Header {
-  grid-area: header;
-  background-color: rgb(31, 139, 211);
+.header {
+  background-color: chocolate;
+
   text-align: left;
   margin-top: 0px;
   margin-bottom: 0px;
-  color: aliceblue;
-  font-size: 0.8em;
-
-  grid: display;
-  grid-template-columns: min-content min-content min-content;
-  grid-template-areas: "title . user";
+  font-size: 1.5em;
 }
-.Header-Title {
+.header-title {
   margin-top: 20px;
-  font-family: "Courier New", Courier, monospace;
-  color: white;
-  grid-area: title;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px black;
+  font-family: "Love Ya Like A Sister", cursive;
+}
+.link {
+  text-decoration: none;
 }
 
 .user-header {
@@ -28,17 +28,9 @@
   text-align: right;
 }
 
-.Navbar {
+.navbar {
   grid-area: nav;
-  background-color: rgb(11, 133, 163);
-}
-.navbar-contents {
-  color: black;
-  font-family: "Courier New", Courier, monospace;
-  text-align: center;
-  font-size: 1em;
-  margin-left: 5px;
-  margin-right: 5px;
+  background-color: white;
 }
 
 .reviews-card-image {
@@ -82,5 +74,31 @@
   display: block;
 }
 .filter-bar {
-  background-color: aquamarine;
+  margin-top: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.filter-button {
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+}
+.filter-button:active {
+  font-size: 0.8em;
+}
+
+.navbar-contents {
+  background-color: black;
+  border-radius: 20%;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  font-size: 1em;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.navbar-contents:active {
+  font-size: 0.9em;
 }

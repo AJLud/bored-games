@@ -6,6 +6,7 @@ const FilterBar = ({ setOrderBy, setSortedBy }) => {
       <span>
         Highest Rated
         <button
+          className="filter-button"
           onClick={() => {
             setOrderBy("asc");
             setSortedBy("votes");
@@ -14,6 +15,7 @@ const FilterBar = ({ setOrderBy, setSortedBy }) => {
           🔼️
         </button>
         <button
+          className="filter-button"
           onClick={() => {
             setOrderBy("desc");
             setSortedBy("votes");
@@ -25,6 +27,7 @@ const FilterBar = ({ setOrderBy, setSortedBy }) => {
       <span>
         Title
         <button
+          className="filter-button"
           onClick={() => {
             setOrderBy("asc");
             setSortedBy("title");
@@ -33,6 +36,7 @@ const FilterBar = ({ setOrderBy, setSortedBy }) => {
           🔼️
         </button>
         <button
+          className="filter-button"
           onClick={() => {
             setOrderBy("desc");
             setSortedBy("title");
@@ -44,6 +48,7 @@ const FilterBar = ({ setOrderBy, setSortedBy }) => {
       <span>
         Author
         <button
+          className="filter-button"
           onClick={() => {
             setOrderBy("asc");
             setSortedBy("owner");
@@ -52,6 +57,7 @@ const FilterBar = ({ setOrderBy, setSortedBy }) => {
           🔼️
         </button>
         <button
+          className="filter-button"
           onClick={() => {
             setOrderBy("desc");
             setSortedBy("owner");
