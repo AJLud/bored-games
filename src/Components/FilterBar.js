@@ -1,13 +1,64 @@
 import React from "react";
 
-const FilterBar = () => {
+const FilterBar = ({ setOrderBy, setSortedBy }) => {
   return (
-    <div className="filterBar">
+    <div className="filter-bar">
       <span>
-        Latest <button>⬆️</button>
+        Highest Rated
+        <button
+          onClick={() => {
+            setOrderBy("asc");
+            setSortedBy("votes");
+          }}
+        >
+          🔼️
+        </button>
+        <button
+          onClick={() => {
+            setOrderBy("desc");
+            setSortedBy("votes");
+          }}
+        >
+          🔽️
+        </button>
       </span>
       <span>
-        Highest Rated <button>⬆️</button>
+        Title
+        <button
+          onClick={() => {
+            setOrderBy("asc");
+            setSortedBy("title");
+          }}
+        >
+          🔼️
+        </button>
+        <button
+          onClick={() => {
+            setOrderBy("desc");
+            setSortedBy("title");
+          }}
+        >
+          🔽️
+        </button>
+      </span>
+      <span>
+        Author
+        <button
+          onClick={() => {
+            setOrderBy("asc");
+            setSortedBy("owner");
+          }}
+        >
+          🔼️
+        </button>
+        <button
+          onClick={() => {
+            setOrderBy("desc");
+            setSortedBy("owner");
+          }}
+        >
+          🔽️
+        </button>
       </span>
     </div>
   );

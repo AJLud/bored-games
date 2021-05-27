@@ -4,14 +4,22 @@ import { getCommentsForReview } from "./Utils/api";
 import { formatDate } from "./Utils/data-manipulation";
 
 const Comments = ({ comments, setComments }) => {
-  // const [comments, setComments] = useState([]);
   const params = useParams();
-
+  const [isLoadingComments, setIsLoadingComments] = useState(true);
+  const [isErrorComments, setIsErrorComments] = useState(false);
   useEffect(() => {
-    getCommentsForReview(params.review_id).then((commentsFromApi) => {
-      setComments(commentsFromApi);
-    });
+    getCommentsForReview(params.review_id)
+      .then((commentsFromApi) => {
+        setIsLoadingComments(false);
+        setComments(commentsFromApi);
+      })
+      .catch((err) => {
+        setIsErrorComments(true);
+      });
   }, [params.review_id]);
+
+  if (isErrorComments) return <p>Sorry, An Error Has Occured</p>;
+  if (isLoadingComments) return <p>Loading Page!</p>;
 
   return (
     <div>

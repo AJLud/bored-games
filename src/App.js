@@ -24,7 +24,10 @@ function App() {
           <Route exact path="/">
             <Reviews />
           </Route>
-          <Route exact path="/Reviews/:review_id">
+          <Route exact path="/category/:category">
+            <Reviews />
+          </Route>
+          <Route exact path="/reviews/:review_id">
             <Review />
           </Route>
         </Switch>

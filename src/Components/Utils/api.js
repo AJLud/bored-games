@@ -10,13 +10,14 @@ export const getCategories = async () => {
   return data.categories;
 };
 
-export const getReviews = async (category) => {
+export const getReviews = async (category, { orderBy, sortedBy }) => {
   const { data } = await gamesApi.get("/reviews", {
     params: {
+      sort_by: sortedBy,
+      order_by: orderBy,
       category,
     },
   });
-
   return data.reviews;
 };
 

@@ -9,13 +9,23 @@ const Review = () => {
   const [review, setReview] = useState({});
   const [reviewVotes, setReviewVotes] = useState(0);
   const [comments, setComments] = useState([]);
+  const [isLoadingReview, setIsLoadingReview] = useState(true);
+  const [isErrorReview, setIsErrorReview] = useState(false);
 
   useEffect(() => {
-    getSingleReview(params.review_id).then((reviewFromApi) => {
-      setReview(reviewFromApi);
-      setReviewVotes(reviewFromApi.votes);
-    });
+    getSingleReview(params.review_id)
+      .then((reviewFromApi) => {
+        setIsLoadingReview(false);
+        setReview(reviewFromApi);
+        setReviewVotes(reviewFromApi.votes);
+      })
+      .catch((err) => {
+        setIsErrorReview(true);
+      });
   }, [params.review_id]);
+
+  if (isErrorReview) return <p>Sorry, A Error Has Occured</p>;
+  if (isLoadingReview) return <p>Loading Page!</p>;
 
   return (
     <div>

@@ -14,10 +14,12 @@ const Nav = () => {
   return (
     <div>
       <div className="Navbar">
-        <button className="navbar-contents">All</button>
+        <Link to="/">
+          <button className="navbar-contents">All</button>
+        </Link>
         {categories.map((category) => {
           return (
-            <Link key={category.slug}>
+            <Link key={category.slug} to={`/category/${category.slug}`}>
               <button className="navbar-contents">{category.slug}</button>
             </Link>
           );

@@ -11,11 +11,7 @@ const CommentForm = ({ setComments }) => {
   const setAndUpdateComments = () => {
     postComment(params.review_id, user, commentInput).then((response) => {
       setComments((currComments) => {
-        const commentsToUpdate = [...currComments];
-        console.log(response);
-        commentsToUpdate.push(response);
-        console.log(commentsToUpdate);
-        return commentsToUpdate;
+        return [...currComments, response];
       });
     });
   };
@@ -39,6 +35,7 @@ const CommentForm = ({ setComments }) => {
             }}
             type="text"
             placeholder="Add Comment....."
+            required
           ></input>
         </label>
         <button>It's Comment Time</button>
