@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getCategories } from "./Utils/api";
+import { formatCategories } from "./Utils/data-manipulation";
 
 const Nav = () => {
   const [categories, setCategories] = useState([]);
@@ -23,7 +24,9 @@ const Nav = () => {
       {categories.map((category) => {
         return (
           <Link key={category.slug} to={`/category/${category.slug}`}>
-            <button className="navbar-contents">{category.slug}</button>
+            <button className="navbar-contents">
+              {formatCategories(category.slug)}
+            </button>
           </Link>
         );
       })}
