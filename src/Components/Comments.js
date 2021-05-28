@@ -27,7 +27,7 @@ const Comments = ({ comments, setComments }) => {
         {comments.map((comment) => {
           return (
             <li key={comment.comment_id} className="comment-card">
-              <h2>{comment.author}</h2>
+              <h2 className="comment-author">{comment.author}</h2>
               <p>{formatDate(comment.created_at)}</p>
               <p>{comment.body}</p>
               <p>Votes: {comment.votes}</p>

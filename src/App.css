@@ -58,7 +58,7 @@
   }
 }
 .header-title:hover {
-  animation: shake 0.5s;
+  animation: shake 4s infinite;
 }
 
 .navbar {
@@ -128,9 +128,18 @@
 .comment-card {
   list-style-type: none;
   padding: 0px;
+  border: 1px solid grey;
+  margin: 2px 2px;
+}
+.comment-card:hover {
+  animation: shake 0.5s;
 }
 .comment-gallery {
   padding-left: 0px;
+}
+.comment-author {
+  font-family: "Love Ya Like A Sister", cursive;
+  font-weight: bold;
 }
 
 .user-header {
@@ -197,6 +206,8 @@
   font-family: "Handlee", cursive;
   font-size: 2em;
   border-radius: 1%;
+  color: white;
+  text-shadow: 2px 2px rgb(10, 10, 10);
 }
 
 .comment-button {
@@ -223,6 +234,9 @@
   max-width: 600px;
   animation: shake 0.5s;
 }
+.review-image:hover {
+  animation: shake 3s infinite;
+}
 
 .review-title {
   font-family: "Handlee", cursive;
@@ -247,8 +261,8 @@
   border-radius: 70%;
 }
 .review-vote-button:hover {
-  animation: shake 1s infinite;
-  animation: bounce 1s;
+  animation: shake 0.5s infinite;
+  animation: bounce 0.5s infinite;
 }
 .upvote-button {
   max-height: 100px;
