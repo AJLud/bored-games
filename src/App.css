@@ -24,6 +24,7 @@
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px black;
   font-family: "Love Ya Like A Sister", cursive;
+  animation: shake 4s infinite;
 }
 @media screen and (min-width: 700px) {
   .reviews-gallery {
@@ -39,10 +40,18 @@
     background-color: chocolate;
     text-align: center;
     font-size: 7em;
+    animation: shake 4s infinite;
   }
   .review-div {
     padding-left: 20%;
     padding-right: 20%;
+  }
+  .review-image {
+    max-width: 600px;
+    animation: shake 0.5s;
+  }
+  .review-image:hover {
+    animation: shake 3s infinite;
   }
 }
 
@@ -56,9 +65,13 @@
     text-align: center;
     font-size: 1.5em;
   }
-}
-.header-title:hover {
-  animation: shake 4s infinite;
+  .review-image {
+    max-width: 350px;
+    animation: shake 0.5s;
+  }
+  .review-image:hover {
+    animation: shake 3s infinite;
+  }
 }
 
 .navbar {
@@ -230,14 +243,6 @@
   padding-right: 100px;
 }
 
-.review-image {
-  max-width: 600px;
-  animation: shake 0.5s;
-}
-.review-image:hover {
-  animation: shake 3s infinite;
-}
-
 .review-title {
   font-family: "Handlee", cursive;
   color: chocolate;
@@ -274,11 +279,6 @@
   transform: translateX(-100%) translateY(-100%);
   mix-blend-mode: screen;
   animation: ripple 1250ms ease-out forwards, fade 1500ms ease-out forwards;
-}
-
-.review-image {
-  max-height: 400px;
-  max-width: 600px;
 }
 
 input {
