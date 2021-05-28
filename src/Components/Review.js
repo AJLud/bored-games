@@ -28,20 +28,21 @@ const Review = () => {
   if (isLoadingReview) return <p>Loading Page!</p>;
 
   return (
-    <div>
-      <h2>{review.title}</h2>
-      <p>By {review.owner}</p>
+    <div className="review-div">
+      <h2 className="review-title">{review.title}</h2>
+      <p className="review-author">By {review.owner}</p>
       <img
         src={review.review_img_url}
         alt={review.title}
-        className="reviews-card-image"
+        className="review-image"
       />
-      <p>Designed by {review.designer}</p>
-      <p>{review.review_body}</p>
+      <p className="review-designer">Designed by {review.designer}</p>
+      <p className="review-body">{review.review_body}</p>
 
       <span>
-        <h5>Votes {reviewVotes}</h5>
+        <h5 className="review-votes">Votes {reviewVotes}</h5>
         <button
+          className="review-vote-button"
           onClick={() => {
             voteReview(review.review_id);
             setReviewVotes((currVotes) => {
@@ -49,7 +50,11 @@ const Review = () => {
             });
           }}
         >
-          ⬆️
+          <img
+            className="upvote-button"
+            alt="upvote"
+            src="https://media0.giphy.com/media/jQOs1usF8FkpgTe7AA/source.gif"
+          />
         </button>
       </span>
       <p className="comment-bar">Comments</p>

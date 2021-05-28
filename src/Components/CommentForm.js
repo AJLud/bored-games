@@ -16,12 +16,10 @@ const CommentForm = ({ setComments }) => {
     });
   };
 
-  //TODO
-  //clear form after submit
-
   return (
-    <div>
+    <div className="comment-form-div">
       <form
+        className="comment-form"
         onSubmit={(event) => {
           event.preventDefault();
           setAndUpdateComments();
@@ -37,9 +35,10 @@ const CommentForm = ({ setComments }) => {
             type="text"
             placeholder="Add Comment....."
             required
+            value={commentInput}
           ></input>
         </label>
-        <button>It's Comment Time</button>
+        <button className="comment-button">It's Comment Time</button>
       </form>
     </div>
   );

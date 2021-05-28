@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
 
 .App {
   text-align: center;
@@ -13,17 +15,47 @@
 }
 .header {
   background-color: chocolate;
-
   text-align: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
   font-size: 1.5em;
 }
 .header-title {
-  margin-top: 20px;
+  margin: auto;
+  padding-top: 20px;
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px black;
   font-family: "Love Ya Like A Sister", cursive;
+}
+@media screen and (min-width: 700px) {
+  .reviews-gallery {
+    padding-left: 25%;
+    padding-right: 25%;
+    text-align: center;
+  }
+  .reviews-image {
+    max-height: 190px;
+    max-width: 250px;
+  }
+  .header-title {
+    background-color: chocolate;
+    text-align: center;
+    font-size: 7em;
+  }
+  .review-div {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .reviews-gallery {
+    text-align: center;
+    padding-left: 0px;
+  }
+  .header-title {
+    background-color: chocolate;
+    text-align: center;
+    font-size: 1.5em;
+  }
 }
 .header-title:hover {
   animation: shake 0.5s;
@@ -35,7 +67,6 @@
 }
 
 .reviews-gallery {
-  padding-left: 0px;
   text-align: center;
 }
 
@@ -51,45 +82,47 @@
   animation: shake 0.5s;
 }
 .reviews-image {
-  max-height: 200px;
+  max-height: 190px;
+  max-width: 250px;
+  border-radius: 5%;
+  border: 1px solid black;
 }
-@keyframes shake {
-  0% {
-    transform: translate(1px, 1px) rotate(0deg);
-  }
-  10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
-  }
-  20% {
-    transform: translate(-3px, 0px) rotate(1deg);
-  }
-  30% {
-    transform: translate(3px, 2px) rotate(0deg);
-  }
-  40% {
-    transform: translate(1px, -1px) rotate(1deg);
-  }
-  50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
-  }
-  60% {
-    transform: translate(-3px, 1px) rotate(0deg);
-  }
-  70% {
-    transform: translate(3px, 1px) rotate(-1deg);
-  }
-  80% {
-    transform: translate(-1px, -1px) rotate(1deg);
-  }
-  90% {
-    transform: translate(1px, 2px) rotate(0deg);
-  }
-  100% {
-    transform: translate(1px, -2px) rotate(-1deg);
-  }
+
+.reviews-title-link {
+  font-family: "Handlee", cursive;
+  color: chocolate;
+  font-size: 2em;
+  text-shadow: 1px 1px rgb(255, 174, 0);
+  margin-top: 0px;
+}
+.reviews-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.reviews-author {
+  font-family: "Handlee", cursive;
+  color: rgb(73, 71, 71);
+  font-size: 1.1em;
+  font-weight: bolder;
+  text-align: left;
+  padding-left: 200px;
+  margin-top: 0px;
 }
 .comment-bar {
-  background-color: rgb(190, 190, 190);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(210, 105, 30, 1) 48%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  padding: 4%;
+  border-radius: 50%;
+  font-family: "Love Ya Like A Sister", cursive;
+  text-shadow: 2px 2px black;
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
 }
 
 .comment-card {
@@ -105,13 +138,15 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: right;
   color: aliceblue;
+  padding-right: 10px;
 }
 
 .user-avatar {
   border-radius: 50%;
   max-height: 40px;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 30px;
+  padding-bottom: 10px;
   display: block;
 }
 .filter-bar {
@@ -119,15 +154,19 @@
   background-color: rgb(255, 255, 255);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   font-weight: bolder;
+  animation: shake 0.5s;
+  font-size: 0.9em;
 }
 
 .filter-button {
   background-color: transparent;
   border: none;
   font-size: 1em;
+  animation: shake 0.5s;
 }
 .filter-button:active {
   font-size: 0.9em;
+  animation: rotation 0.5s infinite;
 }
 
 .navbar-contents {
@@ -143,7 +182,98 @@
 }
 .navbar-contents:active {
   font-size: 0.9em;
-  animation: rotation 0.2s;
+  animation: rotation 0.5s;
+}
+
+.comment-form {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 14%,
+    rgba(210, 105, 30, 1) 44%
+  );
+  font-family: "Handlee", cursive;
+  font-size: 2em;
+  border-radius: 1%;
+}
+
+.comment-button {
+  background-color: black;
+  border-radius: 20%;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  font-size: 1em;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.comment-button:active {
+  font-size: 0.9em;
+  animation: rotation 0.5s;
+}
+.comment-card {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.review-image {
+  max-width: 600px;
+  animation: shake 0.5s;
+}
+
+.review-title {
+  font-family: "Handlee", cursive;
+  color: chocolate;
+  font-size: 2em;
+  text-shadow: 1px 1px rgb(255, 174, 0);
+  margin-top: 30px;
+}
+
+.review-author {
+  font-family: "Handlee", cursive;
+  color: rgb(73, 71, 71);
+  font-size: 1.1em;
+  font-weight: bolder;
+  text-align: left;
+  padding-left: 200px;
+  margin-top: 0px;
+}
+
+.review-vote-button {
+  border: 20px dashed rgb(252, 150, 77);
+  border-radius: 70%;
+}
+.review-vote-button:hover {
+  animation: shake 1s infinite;
+  animation: bounce 1s;
+}
+.upvote-button {
+  max-height: 100px;
+}
+
+.review-vote-button:active {
+  background-color: pink;
+
+  transform: translateX(-100%) translateY(-100%);
+  mix-blend-mode: screen;
+  animation: ripple 1250ms ease-out forwards, fade 1500ms ease-out forwards;
+}
+
+.review-image {
+  max-height: 400px;
+  max-width: 600px;
+}
+
+input {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 8px;
+  box-sizing: border-box;
+  background-color: antiquewhite;
+  border-radius: 5%;
 }
 
 @keyframes rotation {
@@ -188,5 +318,39 @@
   }
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+@keyframes ripple {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  80% {
+    transform: translate(-100%, -100%) scale(50);
+  }
+  100% {
+    transform: translate(-100%, -100%) scale(50);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
   }
 }
