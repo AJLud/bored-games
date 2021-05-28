@@ -5,6 +5,12 @@
   background-color: rgb(255, 255, 255);
 }
 
+.link {
+  text-decoration: none;
+}
+.reviews-title-link {
+  text-decoration: none;
+}
 .header {
   background-color: chocolate;
 
@@ -19,42 +25,46 @@
   text-shadow: 2px 2px black;
   font-family: "Love Ya Like A Sister", cursive;
 }
-.link {
-  text-decoration: none;
-}
-
-.user-header {
-  grid-area: user;
-  text-align: right;
-}
 
 .navbar {
   grid-area: nav;
   background-color: white;
 }
 
-.reviews-card-image {
-  max-height: 200px;
-}
-
 .reviews-gallery {
-  grid-area: reviews;
-  margin: 0px 0px;
   padding-left: 0px;
   text-align: center;
 }
 
 .review-listing-card {
   list-style-type: none;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 8 8px 8 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  border: 2px solid blue;
-  grid-area: review;
+  margin: 20px;
 }
 .review-listing-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
-
+.reviews-image {
+  max-height: 200px;
+}
+/*
+.reviews-title-link {
+  text-decoration: none;
+  grid-area: title;
+}
+.reviews-author {
+  grid-area: author;
+}
+.reviews-created_at {
+  grid-area: created;
+}
+.reviews-votes {
+  grid-area: votes;
+}
+.reviews-comments {
+  grid-area: comments;
+} */
 .comment-bar {
   background-color: rgb(190, 190, 190);
 }
@@ -66,17 +76,26 @@
 .comment-gallery {
   padding-left: 0px;
 }
+
+.user-header {
+  grid-area: user;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: right;
+  color: aliceblue;
+}
+
 .user-avatar {
   border-radius: 50%;
   max-height: 40px;
   margin-left: auto;
-  margin-right: 0px;
+  margin-right: 20px;
   display: block;
 }
 .filter-bar {
   margin-top: 10px;
   background-color: rgb(255, 255, 255);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  font-weight: bolder;
 }
 
 .filter-button {
@@ -85,7 +104,7 @@
   font-size: 1em;
 }
 .filter-button:active {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .navbar-contents {

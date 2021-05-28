@@ -32,22 +32,31 @@ const Reviews = () => {
       <ul className="reviews-gallery">
         {reviews.map((review) => {
           return (
-            <li key={review.review_id} className="review-listing-card">
-              <Link to={`/reviews/${review.review_id}`}>
-                <h3>{review.title}</h3>
-              </Link>
-              <h4>By {review.owner}</h4>
-              <p>on {formatDate(review.created_at)}</p>
-              <img
-                alt={review.title}
-                src={review.review_img_url}
-                className="reviews-card-image"
-              />
-              <span>
-                <h5>Votes {review.votes}</h5>
-              </span>
-              <p>Comments {review.comment_count}</p>
-            </li>
+            <div key={review.review_id}>
+              <li key={review.review_id} className="review-listing-card">
+                <Link
+                  to={`/reviews/${review.review_id}`}
+                  className="reviews-title-link"
+                >
+                  <h3 className="reviews-title">{review.title}</h3>
+                </Link>
+                <h4 className="reviews-author">By {review.owner}</h4>
+                <p className="reviews-created_at">
+                  on {formatDate(review.created_at)}
+                </p>
+                <img
+                  alt={review.title}
+                  src={review.review_img_url}
+                  className="reviews-image"
+                />
+
+                <h5 className="reviews-votes">Votes {review.votes}</h5>
+
+                <p className="reviews-comments">
+                  Comments {review.comment_count}
+                </p>
+              </li>
+            </div>
           );
         })}
       </ul>
