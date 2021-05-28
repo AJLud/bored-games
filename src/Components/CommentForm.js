@@ -25,6 +25,7 @@ const CommentForm = ({ setComments }) => {
         onSubmit={(event) => {
           event.preventDefault();
           setAndUpdateComments();
+          setCommentInput("");
         }}
       >
         <label>
