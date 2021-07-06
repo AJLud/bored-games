@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { UserContext } from "../Contexts/UserContext";
+/** @format */
+
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../Contexts/UserContext';
 
 const Header = () => {
   const { user } = useContext(UserContext);
@@ -11,11 +13,12 @@ const Header = () => {
       </Link>
       <div className="user-info">
         <p className="user-header">{user.username}</p>
-        <img
+        {/* <img
           src={user.avatar_url}
           alt={user.username}
           className="user-avatar"
         />
+        //remove until styling solved */}
       </div>
     </div>
   );
